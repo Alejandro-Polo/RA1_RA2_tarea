@@ -23,6 +23,7 @@ terraform.tfstate.*
 *.pem
 *.key
 id_rsa
+ra1-key
 
 
 ##docker
