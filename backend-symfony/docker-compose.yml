@@ -17,6 +17,7 @@ services:
       - .:/var/www/symfony
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./docker/nginx/certs:/etc/nginx/certs
+      - ./docker/nginx/auth:/etc/nginx/auth
     depends_on:
       - symfony
     networks:
