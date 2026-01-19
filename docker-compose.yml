@@ -4,20 +4,17 @@ services:
   symfony:
         image: alejandropolobarranco/symfony-app:latest
         container_name: backend-symfony
+        expose: 
+        - "9000"
         networks:
         - symfony_net
 
   nginx:
-    image: nginx:alpine
+    build: ./docker/nginx
     container_name: nginx
     ports:
       - "80:80"
       - "443:443"
-    volumes:
-      - ./backend-symfony:/var/www/symfony
-      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - ./docker/nginx/certs:/etc/nginx/certs
-      - ./docker/nginx/auth:/etc/nginx/auth
     depends_on:
       - symfony
     networks:
