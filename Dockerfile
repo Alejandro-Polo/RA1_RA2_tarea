@@ -11,14 +11,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Directorio de trabajo
 WORKDIR /var/www/symfony
 
-# Copiar proyecto
-COPY . .
-
 # Permisos
 RUN chown -R www-data:www-data /var/www/symfony
-
-# Instalar dependencias
-RUN composer install --no-dev --optimize-autoloader
 
 EXPOSE 9000
 CMD ["php-fpm"]
