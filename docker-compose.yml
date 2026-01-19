@@ -2,7 +2,6 @@ version: "3.9"
 
 services:
   symfony:
-    build: .
     container_name: backend-symfony
     volumes:
       - ./backend-symfony:/var/www/symfony
