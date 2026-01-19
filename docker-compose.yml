@@ -2,11 +2,10 @@ version: "3.9"
 
 services:
   symfony:
-    container_name: backend-symfony
-    volumes:
-      - ./backend-symfony:/var/www/symfony
-    networks:
-      - symfony_net
+        image: alejandropolobarranco/symfony-app:latest
+        container_name: backend-symfony
+        networks:
+        - symfony_net
 
   nginx:
     image: nginx:alpine
