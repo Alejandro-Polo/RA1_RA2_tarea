@@ -10,7 +10,7 @@ services:
         - symfony_net
 
   nginx:
-    build: ./docker/nginx
+    image: alejandropolobarranco/nginx-symfony:latest
     container_name: nginx
     ports:
       - "80:80"
