@@ -34,7 +34,7 @@ jobs:
           terraform apply -auto-approve -input=false
 
       - name: Wait for EC2 to be ready
-        run: sleep 120
+        run: sleep 60
 
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.0.0
@@ -52,5 +52,5 @@ jobs:
             cd app
             git pull origin main
 
-            docker compose down
-            docker compose up -d --build
+            docker-compose down
+            docker-compose up -d --build
